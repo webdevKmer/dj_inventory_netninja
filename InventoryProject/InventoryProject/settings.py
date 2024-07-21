@@ -27,6 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['8000-webdevkmer-djinventoryn-rpgv1wgaz0y.ws-eu115.gitpod.io']
 
+CSRF_TRUSTED_ORIGINS = ['https://8000-webdevkmer-djinventoryn-rpgv1wgaz0y.ws-eu115.gitpod.io']
 
 # Application definition
 
