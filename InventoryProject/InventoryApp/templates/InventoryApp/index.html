@@ -3,6 +3,21 @@
 {% block title %}Inventory{% endblock %}
 
 {% block main %}
-    <h2>Inventory Management</h2>
+    <h2>All Products</h2>
+    <a href="{% url 'product_add' %}">Add a product</a>
     <p>All products will be listed here...</p>
+    {% for product in products %}
+    <div class="product">
+        <h3><span>{{ product.id }}</span> - {{ product.name }}</h3>
+        <h5>SKU - {{ product.sku }}</h5>
+        <p>Quantity : <span>{{ product.quantity}}</span></p>
+        <p>Price : <span>{{ product.price}}</span></p>
+        <strong>Supplier : <span>{{ product.supplier}}</span></strong>
+        <div class="btns">
+            <a href="{% url 'product_update' product.id %}">Update</a>
+            <a href="{% url 'confirm_delete' product.id%}">Delete</a>
+        </div>
+        <div>---------------------------------------------</div>
+    </div>
+    {% endfor %}
 {% endblock %}

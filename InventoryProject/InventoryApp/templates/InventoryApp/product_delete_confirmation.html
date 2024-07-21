@@ -1,0 +1,11 @@
+{% extends 'InventoryApp/base.html' %}
+
+{% block title %}Delete Product{% endblock %}
+
+{% block main %}
+    <h3>Do you really want to delete <span>{{product.id}} - {{ product.name }}?</span></h3>
+    <div class="confirm-btns">
+        <a href="{% url 'product_delete' product.id %}">YES</a><a href="{% url 'product_list' %}">NO</a>
+    </div>
+    
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends 'InventoryApp/base.html' %}
+
+{% block title %}Create Product{% endblock %}
+
+{% block main %}
+    <h3>Product</h3>
+    <hr>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Save Product</button>
+    </form>
+    
+{% endblock %}
